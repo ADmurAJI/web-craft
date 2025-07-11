@@ -71,7 +71,7 @@ export const ContactModal = ({ isOpen, onClose }: Props) => {
         window.removeEventListener("keydown", handleEsc);
       }
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, handleClose]);
 
   const handleClickOutside = useCallback(
     (e: MouseEvent) => {
