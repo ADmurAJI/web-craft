@@ -1,18 +1,18 @@
+import "./globals.css";
 import CursorGlow from "@/components/ui/CursorGlow";
 import type { Metadata } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
-import "./globals.css";
 import { ToastContainer } from "react-toastify";
 
 const inter = Inter({
-  variable: "--font-sans",
   subsets: ["latin", "cyrillic"],
   display: "swap",
+  variable: "--font-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
@@ -34,6 +34,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://web-craft-falkone.ru"),
   authors: [{ name: "Aleksandr Falkone", url: "https://web-craft-falkone.ru" }],
   creator: "Aleksandr Falkone",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/icons/apple-touch-icon.png",
+  },
+  manifest: "/site.webmanifest",
   openGraph: {
     title: "Фронтенд-разработка | React, Next.js | SEO",
     description:
@@ -42,29 +47,45 @@ export const metadata: Metadata = {
     siteName: "WebCraft",
     locale: "ru_RU",
     type: "website",
+    images: [
+      {
+        url: "/icons/og-cover.png",
+        width: 1200,
+        height: 630,
+        alt: "Фронтенд-разработка | React, Next.js | SEO",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Фронтенд-разработка | React, Next.js | SEO",
     description:
       "Создаю продающие интерфейсы и веб-приложения на React и Next.js. SEO, адаптивность, интеграции.",
+    images: ["/icons/og-cover.png"],
   },
-  icons: {
-    icon: "/favicon.ico",
-    apple: "/icons/apple-touch-icon.png",
-  },
-  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="ru">
-      <head />
-      <body className={`${inter.variable} ${geistMono.variable}`}>
+    <html lang="ru" className={`${inter.variable} ${geistMono.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="image_src" href="/icons/og-cover.png" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="msapplication-TileColor" content="#000000" />
+
+        {/* Telegram/VK preview fallback */}
+        <meta property="og:image" content="/icons/og-cover.png" />
+        <meta name="vk:image" content="/icons/og-cover.png" />
+        <meta name="telegram:image" content="/icons/og-cover.png" />
+      </head>
+      <body>
         <CursorGlow />
         <ToastContainer
           position="top-right"
