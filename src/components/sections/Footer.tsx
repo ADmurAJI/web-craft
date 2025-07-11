@@ -1,6 +1,7 @@
 "use client";
 
 import { Code, Heart } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 
 export const Footer = () => {
@@ -41,8 +42,10 @@ export const Footer = () => {
               </span>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Создаю веб-приложения, SaaS-продукты и SEO-оптимизированные сайты.
-              4+ лет коммерческого опыта.
+              Разрабатываю веб‑приложения, SaaS‑сервисы и SEO‑оптимизированные
+              сайты. Специализируюсь на frontend‑архитектуре, сложных UI и
+              продуктах, которые приносят результат. 4+ лет в коммерческой
+              разработке.
             </p>
           </div>
 
@@ -50,6 +53,7 @@ export const Footer = () => {
             <h3 className="font-semibold text-foreground">Разделы</h3>
             <div className="space-y-2">
               {[
+                { label: "Главная", href: "#hero" },
                 { label: "Услуги", href: "#services" },
                 { label: "Портфолио", href: "#portfolio" },
                 { label: "Блог", href: "#blog" },
@@ -81,7 +85,13 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm group"
               >
-                <span className="mr-2">VK:</span>
+                <Image
+                  src="/icons/vk.svg"
+                  alt="VK"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />
                 <span className="group-hover:underline">dr.falkone</span>
               </a>
               <a
@@ -90,8 +100,29 @@ export const Footer = () => {
                 rel="noopener noreferrer"
                 className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm group"
               >
-                <span className="mr-2">Telegram:</span>
+                <Image
+                  src="/icons/telegram.svg"
+                  alt="Telegram"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />
                 <span className="group-hover:underline">@dr_falkone</span>
+              </a>
+              <a
+                href="https://github.com/ADmurAJI"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-muted-foreground hover:text-primary transition-colors text-sm group"
+              >
+                <Image
+                  src="/icons/github-mark-white.svg"
+                  alt="GitHub"
+                  width={20}
+                  height={20}
+                  className="mr-2"
+                />
+                <span className="group-hover:underline">ADmurAJI</span>
               </a>
             </div>
           </div>
@@ -108,7 +139,7 @@ export const Footer = () => {
           >
             <span>Сделано с</span>
             <Heart className="w-4 h-4 mx-1 text-red-500 animate-pulse" />
-            <span>на React + TypeScript</span>
+            <span>на Next.js + TypeScript</span>
           </div>
         </div>
       </div>
