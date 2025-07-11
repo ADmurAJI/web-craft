@@ -101,7 +101,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased px-4 sm:px-4;
+    @apply bg-background text-foreground font-sans antialiased px-4 sm:px-4;
   }
 
   ::-webkit-scrollbar {
