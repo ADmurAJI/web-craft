@@ -88,13 +88,16 @@ export const HeroSection = () => {
       >
         <div className="animate-slide-up">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Создаю сложные интерфейсы
+            Проектирую интерфейсы для сложных B2B-систем
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Разрабатываю продающие сайты. Упаковываю ваш бизнес в современное
-            веб-приложение. <br />
-            От идеи до реализации — ваш фронтенд под ключ. SEO, визуал, код —
-            всё будет работать и продавать.
+            Создаю надёжные frontend-решения на React и Next.js: real-time
+            мониторинг, визуализация данных, SSR-оптимизация и защита доступа.
+            <br />
+            Работаю под ключ — от архитектуры и UI до стабильной интеграции с
+            API и ускорения загрузки. <br />
+            Для тех, кому важны стабильность, масштабируемость и технический
+            результат.
           </p>
         </div>
 
