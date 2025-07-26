@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Фронтенд-разработка | React, Next.js | SEO",
   description:
-    "Создаю интерфейсы, SaaS, лендинги и дашборды. Ваш фронтенд под ключ: от идеи до поддержки. SEO, визуал, код — всё работает и продаёт.",
+    "Создаю надёжные frontend-решения на React и Next.js: real-time мониторинг, визуализация данных, SSR-оптимизация и защита доступа.",
   keywords: [
     "фронтенд разработка",
     "создание сайтов",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Фронтенд-разработка | React, Next.js | SEO",
     description:
-      "Разрабатываю современные веб-интерфейсы, SaaS-приложения и лендинги с SEO. Помогу упаковать ваш бизнес в качественный фронтенд.",
+      "Создаю надёжные frontend-решения на React и Next.js: real-time мониторинг, визуализация данных, SSR-оптимизация и защита доступа.",
     url: "https://web-craft-falkone.ru",
     siteName: "WebCraft",
     locale: "ru_RU",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Фронтенд-разработка | React, Next.js | SEO",
     description:
-      "Создаю продающие интерфейсы и веб-приложения на React и Next.js. SEO, адаптивность, интеграции.",
+      "Создаю надёжные frontend-решения на React и Next.js: real-time мониторинг, визуализация данных, SSR-оптимизация и защита доступа.",
     images: ["/icons/og-cover.png"],
   },
 };
