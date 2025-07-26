@@ -1,13 +1,17 @@
 "use client";
 
+import { TypingTerminal } from "@/components/effects/TypingTerminal";
 import { ContactModal } from "@/components/modals/ContactModal";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 export const HeroSection = () => {
   const heroRef = useRef<HTMLDivElement>(null);
+  const techRef = useRef<HTMLDivElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showTerminal, setShowTerminal] = useState(true);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -37,10 +41,28 @@ export const HeroSection = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const target = techRef.current;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowTerminal(!entry.isIntersecting);
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -50% 0px",
+      },
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 sm:pt-0"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-[700px] sm:pb-[160px] sm:pt-0"
     >
       {/* Particles */}
       <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float opacity-60"></div>
@@ -124,15 +146,26 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="animate-slide-up" style={{ animationDelay: "0.4s" }}>
+        {/* Technologies */}
+        <div
+          ref={techRef}
+          className="animate-slide-up"
+          style={{ animationDelay: "0.4s" }}
+        >
           <p className="text-sm text-muted-foreground mb-4">Технологии:</p>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              "JavaScript",
               "TypeScript",
               "React",
               "Next.js",
               "Redux Toolkit",
+              "TanStack Query",
+              "React Hook Form",
+              "Storybook",
+              "SWR / React Query",
+              "Framer Motion",
+              "D3.js",
+              "Cytoscape.js",
             ].map((tech, index) => (
               <div
                 key={tech}
@@ -148,32 +181,16 @@ export const HeroSection = () => {
         <div
           className="animate-slide-up mt-16"
           style={{ animationDelay: "0.8s" }}
-        >
-          <div className="flex justify-center gap-6">
-            <a
-              href="https://vk.com/dr.falkone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              <span className="text-sm font-medium">VK</span>
-            </a>
-            <a
-              href="https://t.me/dr_falkone"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-            >
-              <span className="text-sm font-medium">Telegram</span>
-            </a>
-          </div>
-        </div>
+        ></div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
+      <div
+        className={cn(
+          "hidden sm:block transition-opacity duration-500",
+          showTerminal ? "opacity-100" : "opacity-0 pointer-events-none",
+        )}
+      >
+        <TypingTerminal />
       </div>
 
       <ContactModal

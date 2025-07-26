@@ -107,6 +107,10 @@ module.exports = {
           "0%, 100%": { transform: "scale(1)", opacity: "1" },
           "50%": { transform: "scale(1.1)", opacity: "0.8" },
         },
+        blink: {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
       },
       animation: {
         "fade-in": "fadeIn 0.3s ease-out",
@@ -118,6 +122,7 @@ module.exports = {
         "scale-in": "scale-in 0.3s ease-out",
         wave: "wave 1.5s ease-in-out infinite",
         "fade-in-up": "fadeInUp 0.4s ease-out",
+        blink: "blink 1s steps(2, start) infinite",
       },
     },
   },
