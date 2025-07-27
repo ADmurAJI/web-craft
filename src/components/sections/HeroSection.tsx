@@ -63,7 +63,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-[700px] sm:pb-[160px] sm:pt-0"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-[700px] sm:pb-[160px] sm:pt-0 "
     >
       <Dots />
 
@@ -82,7 +82,7 @@ export const HeroSection = () => {
     font-bold
     mb-6
     leading-tight
-    bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent
+    bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mt-[66px]
   "
           >
             Проектирую интерфейсы для сложных B2B-систем
